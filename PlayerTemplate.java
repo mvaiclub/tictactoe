@@ -42,7 +42,8 @@ class Player {
         int best = 0;
 
         /*set best to either -100 or 100 depending on maximizing.*/
-        
+        if (maximizing) best = -100;
+        if (!maximizing) best = 100;
 
         //all possible moves from curent board state
         ArrayList<Move> possibleMoves = board.getPossibleMoves();
