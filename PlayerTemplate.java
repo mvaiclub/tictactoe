@@ -20,11 +20,15 @@ class Player {
 
     /**
      * COMPLETE THIS METHOD
-     *
-     * Returns the score of the current game board state.
-     *
-     * Additionally, if depth = 0, sets Player.bestMove to the optimal move.
-     * If there are multiple optimal moves, it randomly selects one.
+     * Methods to use for the board:
+     * - board.isTie()
+     * - board.checkWin(this.computerSymbol)
+     * - board.checkWin(this.humanSymbol)
+     * 
+     * Methods to use for ArrayList:
+     * - clear()
+     * - add(<E>)
+     * - get(int)
      *
      * A score of -100 = human player wins, and a score of +100 = AI wins
      */
