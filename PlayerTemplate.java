@@ -30,10 +30,10 @@ class Player {
      */
     private int minimax(boolean maximizing, int depth) {
         
-        //if the board is a tie return 0
+        // if the board is a tie return 0
         
 
-        /*if either computer or human win, return the respective winning
+        /* if either computer or human win, return the respective winning
         score except reduce the depth from either 100 or -100 (add for human,
         subtract for computer) to ensure that the winning move with the least
         depth is chosen */
@@ -41,73 +41,73 @@ class Player {
 
         int best = 0;
 
-        /*set best to either -100 or 100 depending on maximizing.*/
+        /* set best to either -100 or 100 depending on maximizing. */
         if (maximizing) best = -100;
         if (!maximizing) best = 100;
 
-        //all possible moves from curent board state
+        // all possible moves from curent board state
         ArrayList<Move> possibleMoves = board.getPossibleMoves();
 
-        //the moves where the current player wins
+        // the moves where the current player wins
         ArrayList<Move> winningMoves = new ArrayList<>();
 
-        //loop throught every move in possibleMoves
+        // loop throught every move in possibleMoves
         for (Move move : possibleMoves) {
 
-            //play the move
+            // play the move
             board.playMove(move);
 
             
-            /*set integer moveScore by recursing to the next play (the next player
-            is either maximizing or minimizing and the depth increases by 1)*/
+            /* set integer moveScore by recursing to the next play (the next player
+            is either maximizing or minimizing and the depth increases by 1) */
            
 
-            /*in the case of maximizing, add to winningMoves if the moveScore
-            is better than the current best*/
+            /* in the case of maximizing, add to winningMoves if the moveScore
+            is better than the current best */
             if (maximizing) {
 
-                /*in the case that the current best is less than the moveScore
+                /* in the case that the current best is less than the moveScore
                 (that means the moveScore is better), reset the winningMoves
                 list (because now there is a better winning move), set the best
                 to the moveScore, and add the new winning move to the winningMoves
-                list*/
-                if (/*insert conditional*/) {
+                list */
+                if (/* insert conditional */) {
                     
 
 
                  } 
-                 /*in the case that the moveScore is the same as the current best
+                 /* in the case that the moveScore is the same as the current best
                  score, then another optimal move is found so it must be added to the
-                 winning moves*/
-                 else if (/*insert conditional*/) {
+                 winning moves */
+                 else if (/* insert conditional */) {
                     
                 }
             } 
             
-            /*repeating the same logic as with maximizing but the comparisn
+            /* repeating the same logic as with maximizing but the comparisn
             between best and moveScore is switched */
             else {
-                if (/*insert conditional*/) {
+                if (/* insert conditional */) {
                     
 
 
-                } else if (/*insert conditional*/) {
+                } else if (/* insert conditional */) {
                     
                 }
             }
 
-            //undo the move to prevent disrupting the actual board
+            // undo the move to prevent disrupting the actual board
             board.undoMove(move);
         }
 
-        //Base Case: randomly assign the bestMove out of the winning moves
-        if (/*insert conditional*/) {
-
+        // If this is the first minimax call, randomly choose an optimal move
+        if (depth == 0) {
             // Set this.bestMove with the most optimal move.
-            
+
+            // Hint: the list of optimal moves is in the `winningMoves` array!
+            // Hint: Use the Java API to randomly select an item from the `winningMoves` array.
         }
 
-        //only needed for compilation
         return best;
     }
 }
